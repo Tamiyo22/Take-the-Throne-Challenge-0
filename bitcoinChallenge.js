@@ -8048,10 +8048,10 @@ bitcoinData.map((coins)=> coins.generatedCoins).reduce((total,coins)=> total + c
 
 // 	Bitcoin price fluctuates a lot. Let’s combine some array methods to find the total number of days when bitcoin price was over $100!
 
-bitcoinData.filter((cost)=> cost["price(USD)"] > 100)
+bitcoinData.filter((cost)=> cost["price(USD)"] > 100).length
 
 // 	 And finally, let’s find the average bitcoin transaction fees between 2013 and 2015. Be sure to floor this value.
 
-var totalFees=bitcoinData.map((fee)=> fee.fees).reduce((total,cost)=> total + cost)
+var totalFees=bitcoinData.map((fee)=> fee.fees).reduce((total,cost)=> total + cost)/bitcoinData.length
 Math.floor(totalFees)
-//15716
+
